@@ -23,4 +23,4 @@ Run tests with `npm test test/doubly-linked-list-practice-specs.js`
 Read test specs for implementation requirements and details.
 
 
-[starter]: https://github.com/appacademy-starters/practice-linked-lists
+[starter]: https://github.com/appacademy/practice-for-week-05-linked-list-practice

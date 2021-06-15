@@ -19,4 +19,4 @@ Construct a timing test in `linked-list-timing.js` to verify your hypothesis.
 
 There are no test specs for this.
 
-[starter]: https://github.com/appacademy-starters/practice-linked-lists
+[starter]: https://github.com/appacademy/practice-for-week-05-linked-list-practice
