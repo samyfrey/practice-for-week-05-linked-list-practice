@@ -1,56 +1,77 @@
 const { expect } = require('chai');
 
-const LinkedList = require('../linked-list.js');
+const LinkedList = require('../linked-list.js')
 
-describe('Linked list', () => {
+describe('Linked List', () => {
+    describe('Linked List - Constructor', () => {
+        let linkedList;
 
-  let linkedList;
+        beforeEach(function () {
+            linkedList = new LinkedList();
+        });
 
-  beforeEach(function () {
+        it('has head property that is initialized to null', () => {
+            expect(linkedList.head).to.equal(null);
+        });
 
-    linkedList = new LinkedList();
+        it('has length property that is initialized to 0', () => {
+            expect(linkedList.length).to.equal(0);
+        });
 
-  });
-
-  it('has head and length properties', () => {
-
-    expect(linkedList.length).to.equal(0);
-    expect(linkedList.head).to.equal(null);
-
-  });
-
-  it('does not have a tail pointer', () => {
-
-    expect(linkedList.tail).to.equal(undefined);
-
-  });
+        it('does not have a tail pointer', () => {
+            expect(linkedList.tail).to.equal(undefined);
+        });
+    });
 
 
-  it('can addToHead', function () {
+    describe('Linked List - addToHead', () => {
+        let linkedList;
 
-    linkedList.addToHead(1);
-    linkedList.addToHead(2);
-    linkedList.addToHead(3);
+        beforeEach(function () {
+            linkedList = new LinkedList();
 
-    expect(linkedList.length).to.equal(3);
+            linkedList.addToHead(1);
+            linkedList.addToHead(2);
+            linkedList.addToHead(3);
+        });
 
-    expect(linkedList.head.value).to.equal(3);
-    expect(linkedList.head.next.value).to.equal(2);
-    expect(linkedList.head.next.next.value).to.equal(1);
-  });
+        it('addToHead adds the correct head node', () => {
+            expect(linkedList.head.value).to.equal(3);
+        });
 
-  it('can addToTail', function () {
+        it('addToHead links all of the nodes in the correct order', () => {
+            expect(linkedList.head.next.value).to.equal(2);
+            expect(linkedList.head.next.next.value).to.equal(1);
+        });
 
-    linkedList.addToTail(1);
-    linkedList.addToTail(2);
-    linkedList.addToTail(3);
+        it('addToHead correctly modifies the length property', () => {
+            expect(linkedList.length).to.equal(3);
+        });
+    });
 
-    expect(linkedList.length).to.equal(3);
 
-    expect(linkedList.head.value).to.equal(1);
-    expect(linkedList.head.next.value).to.equal(2);
-    expect(linkedList.head.next.next.value).to.equal(3);
-  });
+    describe('Linked List - addToTail', () => {
+        let linkedList;
 
+        beforeEach(function () {
+            linkedList = new LinkedList();
+
+            linkedList.addToTail(1);
+            linkedList.addToTail(2);
+            linkedList.addToTail(3);
+        });
+
+        it('addToTail adds the correct tail value', () => {
+            expect(linkedList.head.next.next.value).to.equal(3);
+        });
+
+        it('addToTail links all of the nodes in the correct order', () => {
+            expect(linkedList.head.value).to.equal(1);
+            expect(linkedList.head.next.value).to.equal(2);
+        });
+
+        it('addToTail correctly modifies the length property', () => {
+            expect(linkedList.length).to.equal(3);
+        });
+    });
 });
-
