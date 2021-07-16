@@ -11,11 +11,11 @@ class DoublyLinkedList {
     // Your code here
   }
 
-  addToHead(val) { // O(1)
+  addToHead(val) {
     // Your code here
   }
 
-  addToTail(val) { // O(1)
+  addToTail(val) {
     // Your code here
   }
 
@@ -30,7 +30,6 @@ class DoublyLinkedList {
 
     console.log("NULL");
   }
-
 }
 
 module.exports = DoublyLinkedList;
