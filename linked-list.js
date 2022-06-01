@@ -7,12 +7,21 @@ class LinkedListNode {
 
 class LinkedList {
   constructor() {
-    // Your code here
+    this.head = null
+    // this.tail = null
+    this.length = 0
   }
 
   addToHead(val) {
-    // Your code here
-  }
+		// Create a new node with the given value
+		const newNode = new LinkedListNode(val)
+
+		// Set the node's `next` pointer to the list's current head pointer
+		newNode.next = head
+
+		// Set the list head to point to the new link
+		head = newNode
+	}
 
   addToTail(val) {
     // Your code here
